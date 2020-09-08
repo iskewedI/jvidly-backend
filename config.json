@@ -1,0 +1,19 @@
+{
+  "endpoints": {
+    "Genres": "/api/genres",
+    "Customers": "/api/customers",
+    "Movies": "/api/movies",
+    "Rentals": "/api/rentals",
+    "Users": "/api/users",
+    "Auth": "/api/auth",
+    "Returns": "/api/returns"
+  },
+  "messages": {
+    "notFound": "Not found.",
+    "alreadyExisting": "Already existing.",
+    "invalidAuth": "Invalid email or password",
+    "noTokenProvided": "Access denied. No token provided.",
+    "accessDenied": "Access denied.",
+    "invalidToken": "Invalid token."
+  }
+}
