@@ -17,7 +17,7 @@ router.get('/me', auth, async (req, res) => {
   res.send(user);
 });
 
-router.post('/', auth, async ({ body }, res) => {
+router.post('/', async ({ body }, res) => {
   //Validate
   const { error } = validate(body);
   if (error) return res.status(400).send(error.message);
@@ -34,9 +34,7 @@ router.post('/', auth, async ({ body }, res) => {
 
   const token = user.generateAuthToken(); //Tokens must not be saved on any database!
 
-  res
-    .header('x-auth-token', token)
-    .send(_.pick(user, ['_id', 'name', 'email']));
+  res.header('x-auth-token', token).send(_.pick(user, ['_id', 'name', 'email']));
 });
 
 module.exports = router;
