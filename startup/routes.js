@@ -7,10 +7,14 @@ const usersRoute = require('../routes/users');
 const authRoute = require('../routes/auth');
 const returnsRoute = require('../routes/returns');
 const error = require('../middleware/error');
+const cors = require('../middleware/cors');
 const { endpoints } = require('../config.json');
 
 module.exports = function (app) {
   app.use(express.json());
+
+  app.use(cors);
+
   app.use(endpoints.Genres, genresRoute);
   app.use(endpoints.Customers, customersRoute);
   app.use(endpoints.Movies, moviesRoute);
